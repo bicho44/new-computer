@@ -11,6 +11,7 @@ echo "I  ❤️  🍎"
 echo "Mac OS Install Setup Script"
 echo "By Nina Zakharenko"
 echo "Follow me on twitter! https://twitter.com/nnja"
+echo "Edited by Fede Reinoso"
 
 # Some configs reused from:
 # https://github.com/ruyadorno/installme-osx/
@@ -134,9 +135,9 @@ retries=3
 SSH_KEY=`cat ~/.ssh/id_rsa.pub`
 
 for ((i=0; i<retries; i++)); do
-      read -p 'GitHub username: ' ghusername
-      read -p 'Machine name: ' ghtitle
-      read -sp 'GitHub personal token: ' ghtoken
+      read -p 'GitHub username: ' bicho44
+      read -p 'Machine name: ' Clarita
+      read -sp 'GitHub personal token: ' 70d75c0397b0278f3a08d1a5407e41bf9b55803e
 
       gh_status_code=$(curl -o /dev/null -s -w "%{http_code}\n" -u "$ghusername:$ghtoken" -d '{"title":"'$ghtitle'","key":"'"$SSH_KEY"'"}' 'https://api.github.com/user/keys')
 
@@ -145,7 +146,7 @@ for ((i=0; i<retries; i++)); do
           echo "GitHub ssh key added successfully!"
           break
       else
-			echo "Something went wrong. Enter your credentials and try again..."
+		echo "Something went wrong. Enter your credentials and try again..."
      		echo -n "Status code returned: "
      		echo $gh_status_code
       fi
@@ -178,9 +179,9 @@ brew install ispell
 
 
 ### Development
-brew cask install docker
-brew install postgresql
-brew install redis
+# brew cask install docker
+# brew install postgresql
+# brew install redis
 
 
 ### Command line tools - install new ones, update others to latest version
@@ -197,20 +198,20 @@ brew install less
 
 
 ### Python
-brew install python
-brew install pyenv
+# brew install python
+# brew install pyenv
 
 
 ### Microcontrollers & Electronics
-brew install avrdude
-brew cask install arduino
+# brew install avrdude
+# brew cask install arduino
 # Manually install teensyduino from:
 # https://www.pjrc.com/teensy/td_download.html
 
 
 ### Dev Editors 
 brew cask install visual-studio-code
-brew cask install pycharm
+# brew cask install pycharm
 ### spacemacs github.com/syl20bnr/spacemacs
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 brew tap d12frosted/emacs-plus
@@ -225,19 +226,19 @@ brew cask install notion
 
 
 ### Conferences, Blogging, Screencasts
-brew cask install deckset
+# brew cask install deckset
 brew cask install ImageOptim  # for optimizing images
-brew cask install screenflow
+# brew cask install screenflow
 
 
 ### Productivity
 brew cask install wavebox
-brew cask install google-chrome
+# brew cask install google-chrome
 brew cask install alfred
 brew cask install dropbox
 
 brew cask install timing  # time and project tracker
-brew cask install keycastr  # show key presses on screen (for gifs & screencasts)
+# brew cask install keycastr  # show key presses on screen (for gifs & screencasts)
 brew cask install betterzip
 brew cask install caffeine  # keep computer from sleeping
 brew cask install skitch  # app to annotate screenshots
@@ -260,14 +261,14 @@ brew cask install quicklook-csv  # preview csvs
 
 
 ### Chat / Video Conference
-brew cask install slack
-brew cask install microsoft-teams
-brew cask install zoomus
-brew cask install signal
+# brew cask install slack
+# brew cask install microsoft-teams
+# brew cask install zoomus
+# brew cask install signal
 
 
 ### Music and Video
-brew cask install marshallofsound-google-play-music-player
+# brew cask install marshallofsound-google-play-music-player
 brew cask install vlc
 
 
@@ -311,10 +312,10 @@ read response
 if [ "$response" != "${response#[Yy]}" ]
 then
 	mas install 907364780  # Tomato One - Pomodoro timer
-	mas install 485812721  # Tweetdeck
+	# mas install 485812721  # Tweetdeck
 	mas install 668208984  # GIPHY Capture. The GIF Maker (For recording my screen as gif)
-	mas install 1351639930 # Gifski, convert videos to gifs
-	mas install 414030210  # Limechat, IRC app.
+	# mas install 1351639930 # Gifski, convert videos to gifs
+	# mas install 414030210  # Limechat, IRC app.
 else
 	cecho "App Store login not complete. Skipping installing App Store Apps" $red
 fi
@@ -324,11 +325,11 @@ fi
 ### Install few global python packages
 #############################################
 
-echo "Installing global Python packages..."
+# echo "Installing global Python packages..."
 
-pip3 install --upgrade pip
-pip3 install --user pylint
-pip3 install --user flake8
+# pip3 install --upgrade pip
+# pip3 install --user pylint
+# pip3 install --user flake8
 
 
 #############################################
@@ -423,7 +424,7 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Use function F1, F, etc keys as standard function keys
-defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+#defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
 
 ###############################################################################
@@ -514,7 +515,7 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 ###############################################################################
 
 # Disable the all too sensitive backswipe on trackpads
-defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
+#defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 
 
 #############################################
